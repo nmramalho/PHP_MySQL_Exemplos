@@ -40,5 +40,3 @@ else{
     }
 
 $ligacao->close();       /* fechar a ligação */
-
-
