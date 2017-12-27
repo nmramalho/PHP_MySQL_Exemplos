@@ -32,6 +32,7 @@ $consulta = "DELETE FROM departamento WHERE id = '$id' ";
 if (!$ligacao->query($consulta)) {
     echo " Falha ao executar a consulta: \"$consulta\" <br>" . $ligacao->error;
     $ligacao->close();  /* fechar a ligação */
+    echo ' <br> <a href="listardepartamentos.php"> Voltar à lista de departamentos </a>' ;
     exit();
 }
 
@@ -39,10 +40,13 @@ if (!$ligacao->query($consulta)) {
 if($ligacao->affected_rows > 0){
     echo " O registo com o id = $id foi eliminado com sucesso" ;
     $ligacao->close();       /* fechar a ligação */
+    echo '<br> <a href="listardepartamentos.php"> Voltar à lista de departamentos </a>' ;
 }
 else{
+    header("Location: listardepartamentos.php");
     echo " O registo com o id = $id não encontrado!" ;
     $ligacao->close();       /* fechar a ligação */
+    echo '<br> <a href="listardepartamentos.php"> Voltar à lista de departamentos </a>' ;
 }
 
 
