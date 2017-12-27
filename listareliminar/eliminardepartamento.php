@@ -7,15 +7,14 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     /* validar os dados recebidos através do pedido */
     if (empty($id) || $operacao!="eliminar"){
-        echo "Operação não permitida ";
+        echo "  Erro, pedido inválido ";
         exit();
     }    
 }
 else{
-   echo " Erro, formulário não submetido ";
+   echo " Erro, pedido inválido ";
    exit();
 }
-
 
 /* estabelece a ligação à base de dados */
 $ligacao = new mysqli("localhost", "root", "1234", "empresa");

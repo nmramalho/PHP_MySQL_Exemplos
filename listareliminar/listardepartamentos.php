@@ -23,7 +23,9 @@ if (!$resultado = $ligacao->query($consulta)) {
 else{
     /* percorrer os registos (linhas) da tabela e mostrar na página */
     while ($row = $resultado->fetch_assoc()){   
-        echo 'id: ' . $row['id'] . ' Nome: ' . $row['nome'] . '<a href="eliminardepartamento.php?id='.$row['id'] .'&operacao=eliminar"> - Eliminar</a><br>';
+        echo 'id: ' . $row['id'] . ' Nome: ' . $row['nome'] . 
+             '<a href="eliminardepartamento.php?id='.$row['id'] .
+             '&operacao=eliminar"> - Eliminar</a><br>';
     }
 
 $resultado->free();      /* libertar o resultado */
